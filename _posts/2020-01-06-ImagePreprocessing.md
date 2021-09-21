@@ -3,7 +3,7 @@ layout: post
 title: Bài 1 - Tiền xử lý ảnh OpenCV
 date: 2019-09-12 13:32:20 +0300
 description: This is description of post. # Add post description (optional)
-img:  # Add image post (optional)
+img:  AI_logo.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [opencv, imageprocessing]
 ---

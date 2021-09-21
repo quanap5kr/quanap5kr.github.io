@@ -1,7 +1,10 @@
-<ul>
-  {% for post in site.posts %}
-	  <div>
-		<hr>
+{% for post in site.posts %}
+  <article class="post">
+	  {% if post.img %}
+	  	<a class="post-thumbnail" style="background-image: url('../assets/images/AI_logo.jpg')"></a>
+	  {% else %}
+	  {% endif %}
+	  <div class="post-content">
 		<h2>
 			<a class="post-link" style="text-align: left; color: #539738; font-weight: bold" href="{{post.url}}">{{ post.title }}</a>
 		</h2>
@@ -13,6 +16,7 @@
 		<span class="post-date" style="float: right; "><strong>{{ post.date | date_to_string}}</strong></span>
 	  </div>
 	
+  </article>
+	  
   {% endfor %}
-</ul>
 
