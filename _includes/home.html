@@ -1,22 +1,47 @@
 {% for post in site.posts %}
-  <article class="post">
-	  {% if post.img %}
-	  	<a class="post-thumbnail" style="background-image: url('../assets/images/AI_logo.jpg')"></a>
-	  {% else %}
-	  {% endif %}
-	  <div class="post-content">
+<article class="post">
+	{% assign mod = forloop.index | modulo: 2 %}
+	{% if mod == 0 %}
+	<!-- even -->
+	{% if post.img %}
+	<a class="post-thumbnail" style="background-image: url({{"/assets/images/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
+	{% else %}
+	<a class="post-thumbnail" style="background-image: url('/assets/images/AI_logo.jpg')"></a>
+	{% endif %}
+	<div class="post-content">
 		<h2>
-			<a class="post-link" style="text-align: left; color: #539738; font-weight: bold" href="{{post.url}}">{{ post.title }}</a>
+			<a class="post-link" style="text-align: left; color: #539738; font-weight: bold" href="{{post.url}}">{{
+				post.title }}</a>
 		</h2>
 		<br>
 		<p>
-		{{ post.content | strip_html | truncatewords: 75 }}
+			{{ post.content | strip_html | truncatewords: 75 }}
 		</p>
-		<a href="{{post.url}}" sylte="color: #204081;">Xem tiếp » </a> 
+		<a href="{{post.url}}" sylte="color: #204081;">Xem tiếp » </a>
 		<span class="post-date" style="float: right; "><strong>{{ post.date | date_to_string}}</strong></span>
-	  </div>
+	</div>
+	{% else %}
 	
-  </article>
-	  
-  {% endfor %}
+	<div class="post-content">
+		<h2>
+			<a class="post-link" style="text-align: left; color: #539738; font-weight: bold" href="{{post.url}}">{{
+				post.title }}</a>
+		</h2>
+		<br>
+		<p>
+			{{ post.content | strip_html | truncatewords: 75 }}
+		</p>
+		<a href="{{post.url}}" sylte="color: #204081;">Xem tiếp » </a>
+		<span class="post-date" style="float: right; "><strong>{{ post.date | date_to_string}}</strong></span>
+	</div>
+	{% if post.img %}
+	<a class="post-thumbnail" style="background-image: url({{"/assets/images/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
+{% else %}
+	<a class="post-thumbnail" style="background-image: url('/assets/images/AI_logo.jpg')"></a>
+	{% endif %}
+	{% endif %}
 
+
+</article>
+
+{% endfor %}
