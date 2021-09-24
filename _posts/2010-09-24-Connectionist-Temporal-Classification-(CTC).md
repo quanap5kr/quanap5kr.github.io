@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bài 4 - Connectionist Temporal Classification (CTC)
-date: 2021-09-24 13:32:20 +0300
+date: 2021-09-23 0:0:20 +0300
 description: This is description of post. # Add post description (optional)
 img:  QT_logo.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
